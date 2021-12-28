@@ -1,0 +1,21 @@
+.footer {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #0f2c67;
+  height: 3.45rem;
+  border-top: 3px solid #fff;
+}
+
+.footer > a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footer > a:hover {
+  color: #9b0707;
+}

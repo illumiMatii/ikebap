@@ -1,0 +1,17 @@
+.menu {
+  background: linear-gradient(#9b0707, #8a0606);
+  width: 100%;
+  height: auto;
+}
+
+.menu-main__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menu-main__container > article {
+  margin-top: 3%;
+}
