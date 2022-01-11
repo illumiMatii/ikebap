@@ -1,7 +1,8 @@
 import "../styles/homemenu.scss";
 import Kebab from "../img/Kebab1.png";
+import { useState } from "react";
 
-const HomeMenu = () => {
+const HomeMenu = (props) => {
   return (
     <div className="home__menu-main">
       <div className="menu-main">

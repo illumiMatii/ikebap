@@ -1,6 +1,6 @@
 import "../styles/proceedbutton.scss";
 
-const ProceedButton = () => {
+const ProceedButton = (props) => {
   return <input className="btn-grad" type="submit" value="Get In" />;
 };
 

@@ -8,7 +8,7 @@ function App() {
     {
       id: 1,
       name: "iKebap Pro Max Super",
-      price: 22.50,
+      price: 22.5,
       desc: "Lorem Ipsum dolor sit amet, consectetur adipsicing elit",
       quantity: 1,
     },
@@ -57,7 +57,7 @@ function App() {
     {
       id: 8,
       name: "iKebap American",
-      price: 16.50,
+      price: 16.5,
       desc: "Lorem Ipsum dolor sit amet, consectetur adipsicing elit",
       quantity: 1,
     },
@@ -70,13 +70,11 @@ function App() {
     },
   ];
 
-  
-
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <SiteRoutes orders={orders}/>
+        <SiteRoutes orders={orders} />
         <Footer />
       </BrowserRouter>
     </div>
