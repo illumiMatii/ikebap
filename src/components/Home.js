@@ -7,7 +7,7 @@ const Home = (props) => {
     <>
       <div className="home__component">
         <HomeInfo />
-        <HomeMenu orders={props.orders} />
+        <HomeMenu orders={props.orders} onAddOrder={props.onAddOrder} />
       </div>
     </>
   );

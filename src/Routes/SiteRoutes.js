@@ -14,12 +14,15 @@ const SiteRoutes = (props) => {
 
   const onAddOrder = (order) => {
     setOrderItems([...orderItems, order]);
-    console.log(order);
   };
 
   return (
     <Routes>
-      <Route exact path="/" element={<Home orders={props.orders} />} />
+      <Route
+        exact
+        path="/"
+        element={<Home onAddOrder={onAddOrder} orders={props.orders} />}
+      />
       <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<Signin />} />
       <Route

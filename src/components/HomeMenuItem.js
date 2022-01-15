@@ -1,4 +1,17 @@
+import { useState, useEffect } from "react";
+
 const HomeMenuItem = (props) => {
+  const [order, setOrder] = useState(props.order);
+
+  useEffect(() => {
+    setOrder(props.order);
+  });
+
+  const onAddOrderHandler = () => {
+    props.onAddOrder(order);
+    console.log(order);
+  };
+
   return (
     <div className="content__img-container">
       <img src={props.img} />
@@ -9,7 +22,9 @@ const HomeMenuItem = (props) => {
       </p>
       <div className="container__add-product">
         <h3>{props.order.price}zł</h3>
-        <button className="button">Take It!</button>
+        <button className="button" onClick={onAddOrderHandler}>
+          Take It!
+        </button>
       </div>
     </div>
   );

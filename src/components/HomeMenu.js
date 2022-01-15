@@ -41,7 +41,11 @@ const HomeMenu = (props) => {
         </div>
       </div>
       <div className="menu-main__content">
-        <HomeMenuItem order={props.orders[item_id]} img={Kebab} />
+        <HomeMenuItem
+          order={props.orders[item_id]}
+          img={Kebab}
+          onAddOrder={props.onAddOrder}
+        />
       </div>
     </div>
   );
