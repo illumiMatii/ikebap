@@ -17,14 +17,19 @@ const SiteRoutes = (props) => {
     console.log(order);
   };
 
-
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route exact path="/" element={<Home orders={props.orders} />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<Signin />} />
-      <Route path="/menu" element={<Menu onAddOrder={onAddOrder} orders={props.orders}/>} />
-      <Route path="/cart" element={<Cart onAddOrder={onAddOrder} productItems={orderItems} />} />
+      <Route
+        path="/menu"
+        element={<Menu onAddOrder={onAddOrder} orders={props.orders} />}
+      />
+      <Route
+        path="/cart"
+        element={<Cart onAddOrder={onAddOrder} productItems={orderItems} />}
+      />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/about" element={<About />} />
     </Routes>

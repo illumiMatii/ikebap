@@ -2,12 +2,12 @@ import HomeInfo from "./HomeInfo";
 import HomeMenu from "./HomeMenu";
 import "../styles/home.css";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <>
       <div className="home__component">
         <HomeInfo />
-        <HomeMenu />
+        <HomeMenu orders={props.orders} />
       </div>
     </>
   );

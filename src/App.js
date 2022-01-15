@@ -63,7 +63,7 @@ function App() {
     },
     {
       id: 9,
-      name: "iKebap po góralsku",
+      name: "iKebap Góralski",
       price: 17,
       desc: "Lorem Ipsum dolor sit amet, consectetur adipsicing elit",
       quantity: 1,

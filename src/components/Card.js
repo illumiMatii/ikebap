@@ -2,13 +2,12 @@ import "../styles/card.scss";
 import KebapImg from "../img/Kebab1.png";
 import { useState } from "react";
 
-
 const Card = (props) => {
   const [order, onAdd] = useState(props.order);
 
   const onAddOrderHandler = () => {
     props.onAddOrder(order);
-  }
+  };
 
   return (
     <div className="container__order">
