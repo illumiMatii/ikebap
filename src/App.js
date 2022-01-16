@@ -8,7 +8,7 @@ function App() {
     {
       id: 1,
       name: "iKebap Pro Max Super",
-      price: 22.5,
+      price: 22,
       desc: "Lorem Ipsum dolor sit amet, consectetur adipsicing elit",
       quantity: 1,
     },

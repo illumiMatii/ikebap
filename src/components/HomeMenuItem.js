@@ -9,7 +9,6 @@ const HomeMenuItem = (props) => {
 
   const onAddOrderHandler = () => {
     props.onAddOrder(order);
-    console.log(order);
   };
 
   return (

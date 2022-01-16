@@ -2,9 +2,9 @@ import "../styles/header.scss";
 import Logo from "../img/doner-kebab.png";
 import { Link } from "react-router-dom";
 
-//TODO: Create communication between Menu and Header to show if something is in Cart
+const Header = (props) => {
+  let price = 0;
 
-const Header = () => {
   return (
     <div className="header">
       <Link to="/" className="header__logo">
@@ -21,15 +21,12 @@ const Header = () => {
         <Link to="/signin" className="content__link">
           Log in
         </Link>
-        <Link to="/signup" className="content__link">
-          Sign Up
-        </Link>
       </div>
       <div className="header__basket">
         <Link to="/cart" className="basket__link">
           Cart
         </Link>
-        <p>25.99zł</p>
+        <p>{price}zł</p>
       </div>
     </div>
   );
