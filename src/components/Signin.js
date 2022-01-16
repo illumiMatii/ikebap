@@ -2,12 +2,12 @@ import { useState } from "react";
 import "../styles/signin.scss";
 import ProceedButton from "./ProceedButton";
 
-const Signin = () => {
-  const [email, setEmail] = useState("");
+const Signin = (props) => {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const emailChangeHandler = (event) => {
-    setEmail(event.target.value);
+  const usernameChangeHandler = (event) => {
+    setUsername(event.target.value);
   };
 
   const passwordChangeHandler = (event) => {
@@ -18,6 +18,10 @@ const Signin = () => {
     event.preventDefault();
   };
 
+  const onProceedButton = () => {
+    props.onUserLogIn(username);
+  };
+
   return (
     <div className="signin">
       <div className="signin-container" onSubmit={onFormSubmitHandler}>
@@ -25,11 +29,11 @@ const Signin = () => {
         <form className="signin__form">
           <input
             className="form-input"
-            onChange={emailChangeHandler}
-            type="email"
+            onChange={usernameChangeHandler}
+            type="text"
             required
           />
-          <label>Email</label>
+          <label>Username</label>
           <input
             className="form-input"
             onChange={passwordChangeHandler}
@@ -37,7 +41,7 @@ const Signin = () => {
             required
           />
           <label>Password</label>
-          <ProceedButton />
+          <ProceedButton onProceedButton={onProceedButton} />
         </form>
       </div>
     </div>

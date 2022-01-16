@@ -4,14 +4,14 @@ import Signin from "../components/Signin";
 import Signup from "../components/Signup";
 import Menu from "../components/Menu";
 import Cart from "../components/Cart";
-import { useEffect, useState } from "react";
-import Card from "../components/Card";
+import { useState } from "react";
 import Checkout from "../components/Checkout";
 import About from "../components/About";
 
 const SiteRoutes = (props) => {
   const [orderItems, setOrderItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [username, setUsername] = useState();
 
   const onAddOrder = (order) => {
     setOrderItems([...orderItems, order]);
@@ -25,7 +25,10 @@ const SiteRoutes = (props) => {
         element={<Home onAddOrder={onAddOrder} orders={props.orders} />}
       />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/signin" element={<Signin />} />
+      <Route
+        path="/signin"
+        element={<Signin onUserLogIn={props.onUserLogIn} />}
+      />
       <Route
         path="/menu"
         element={<Menu onAddOrder={onAddOrder} orders={props.orders} />}

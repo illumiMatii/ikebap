@@ -1,9 +1,10 @@
 import "../styles/header.scss";
 import Logo from "../img/doner-kebab.png";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const Header = (props) => {
+  let username = props.username;
+
   return (
     <div className="header">
       <Link to="/" className="header__logo">
@@ -20,6 +21,16 @@ const Header = (props) => {
         <Link to="/signin" className="content__link">
           Log in
         </Link>
+        {username !== undefined ? (
+          <div className="content__user">
+            <Link to="/" className="content__link">
+              Logged as: {username}
+            </Link>
+            <button>Logout</button>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <div className="header__basket">
         <Link to="/cart" className="basket__link">

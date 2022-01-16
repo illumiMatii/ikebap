@@ -46,6 +46,24 @@
       color: #9b0707;
     }
   }
+
+  .content__user {
+    display: flex;
+    flex-direction: row;
+
+    .content__link {
+      margin-right: 20px;
+      cursor: default;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: #9b0707;
+      color: #fff;
+      border-radius: 30px;
+    }
+  }
 }
 
 .header__basket {

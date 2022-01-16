@@ -72,20 +72,27 @@ function App() {
   ];
 
   const [totalPrice, setTotalPrice] = useState(0);
+  const [username, setUsername] = useState();
 
   const onPriceChange = (order) => {
     setTotalPrice(order);
     console.log(order);
   };
 
+  const onUserLogIn = (user) => {
+    setUsername(user);
+    console.log(username);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Header totalPrice={totalPrice} />
+        <Header totalPrice={totalPrice} username={username} />
         <SiteRoutes
           orders={orders}
           onPriceChange={onPriceChange}
           totalPrice={totalPrice}
+          onUserLogIn={onUserLogIn}
         />
         <Footer />
       </BrowserRouter>
