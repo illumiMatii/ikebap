@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect } from "react";
 import "../styles/cart.scss";
 
 const Cart = (props) => {
@@ -8,6 +8,14 @@ const Cart = (props) => {
   let totalPrice = cartItems.reduce((prevItem, currentItem) => {
     return prevItem + currentItem.price;
   }, 0);
+
+  const onPriceChange = () => {
+    props.onPriceChange(totalPrice);
+  };
+
+  useEffect(() => {
+    onPriceChange();
+  });
 
   return (
     <div className="cart__container">

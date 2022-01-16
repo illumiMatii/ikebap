@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SiteRoutes from "./Routes/SiteRoutes";
 import { BrowserRouter } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
   let orders = [
@@ -28,7 +29,7 @@ function App() {
     },
     {
       id: 4,
-      name: "iKebap California Reeper",
+      name: "iKebap California Reaper",
       price: 18,
       desc: "Lorem Ipsum dolor sit amet, consectetur adipsicing elit",
       quantity: 1,
@@ -70,11 +71,22 @@ function App() {
     },
   ];
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const onPriceChange = (order) => {
+    setTotalPrice(order);
+    console.log(order);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <SiteRoutes orders={orders} />
+        <Header totalPrice={totalPrice} />
+        <SiteRoutes
+          orders={orders}
+          onPriceChange={onPriceChange}
+          totalPrice={totalPrice}
+        />
         <Footer />
       </BrowserRouter>
     </div>

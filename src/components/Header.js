@@ -1,10 +1,9 @@
 import "../styles/header.scss";
 import Logo from "../img/doner-kebab.png";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Header = (props) => {
-  let price = 0;
-
   return (
     <div className="header">
       <Link to="/" className="header__logo">
@@ -26,7 +25,7 @@ const Header = (props) => {
         <Link to="/cart" className="basket__link">
           Cart
         </Link>
-        <p>{price}zł</p>
+        <p>{props.totalPrice}zł</p>
       </div>
     </div>
   );
