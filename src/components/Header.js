@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 const Header = (props) => {
   let username = props.username;
 
+  //TODO: if props.isUserLoggedIn false then do not show the user div
+  const onUserLogOut = () => {
+    props.onUserLogOut(false);
+  };
+
   return (
     <div className="header">
       <Link to="/" className="header__logo">
@@ -18,15 +23,19 @@ const Header = (props) => {
         <Link to="/menu" className="content__link">
           Menu
         </Link>
-        <Link to="/signin" className="content__link">
-          Log in
-        </Link>
-        {username !== undefined ? (
+        {props.isUserLoggedIn === false ? (
+          <Link to="/signin" className="content__link">
+            Log in
+          </Link>
+        ) : (
+          ""
+        )}
+        {props.isUserLoggedIn === true ? (
           <div className="content__user">
             <Link to="/" className="content__link">
               Logged as: {username}
             </Link>
-            <button>Logout</button>
+            <button onClick={onUserLogOut}>Logout</button>
           </div>
         ) : (
           ""

@@ -6,6 +6,11 @@ const Signin = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  //TODO: pass the value to Header Component
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  const onUserIsLogged = () => {};
+
   const usernameChangeHandler = (event) => {
     setUsername(event.target.value);
   };
@@ -20,6 +25,7 @@ const Signin = (props) => {
 
   const onProceedButton = () => {
     props.onUserLogIn(username);
+    props.onUserIsLogged(!isUserLoggedIn);
   };
 
   return (

@@ -27,7 +27,12 @@ const SiteRoutes = (props) => {
       <Route path="/signup" element={<Signup />} />
       <Route
         path="/signin"
-        element={<Signin onUserLogIn={props.onUserLogIn} />}
+        element={
+          <Signin
+            onUserLogIn={props.onUserLogIn}
+            onUserIsLogged={props.onUserIsLogged}
+          />
+        }
       />
       <Route
         path="/menu"

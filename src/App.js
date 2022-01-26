@@ -73,26 +73,41 @@ function App() {
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [username, setUsername] = useState();
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   const onPriceChange = (order) => {
     setTotalPrice(order);
-    console.log(order);
+  };
+
+  const onUserIsLogged = (bool) => {
+    setIsUserLoggedIn(bool);
   };
 
   const onUserLogIn = (user) => {
     setUsername(user);
-    console.log(username);
+  };
+
+  const onUserLogOut = (bool) => {
+    setIsUserLoggedIn(bool);
   };
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Header totalPrice={totalPrice} username={username} />
+        <Header
+          totalPrice={totalPrice}
+          username={username}
+          isUserLoggedIn={isUserLoggedIn}
+          onUserIsLogged={onUserIsLogged}
+          onUserLogOut={onUserLogOut}
+        />
         <SiteRoutes
           orders={orders}
           onPriceChange={onPriceChange}
           totalPrice={totalPrice}
           onUserLogIn={onUserLogIn}
+          onUserIsLogged={onUserIsLogged}
+          onUserLogOut={onUserLogOut}
         />
         <Footer />
       </BrowserRouter>
