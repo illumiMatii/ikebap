@@ -73,7 +73,12 @@ function App() {
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [username, setUsername] = useState();
+  const [orderItems, setOrderItems] = useState([]);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  const onAddOrder = (order) => {
+    setOrderItems([...orderItems, order]);
+  };
 
   const onPriceChange = (order) => {
     setTotalPrice(order);
@@ -98,16 +103,19 @@ function App() {
           totalPrice={totalPrice}
           username={username}
           isUserLoggedIn={isUserLoggedIn}
+          orderItems={orderItems.length}
           onUserIsLogged={onUserIsLogged}
           onUserLogOut={onUserLogOut}
         />
         <SiteRoutes
           orders={orders}
           onPriceChange={onPriceChange}
+          orderItems={orderItems}
           totalPrice={totalPrice}
           onUserLogIn={onUserLogIn}
           onUserIsLogged={onUserIsLogged}
           onUserLogOut={onUserLogOut}
+          onAddOrder={onAddOrder}
         />
         <Footer />
       </BrowserRouter>

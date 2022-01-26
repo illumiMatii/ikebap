@@ -3,9 +3,6 @@ import Logo from "../img/doner-kebab.png";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
-  let username = props.username;
-
-  //TODO: if props.isUserLoggedIn false then do not show the user div
   const onUserLogOut = () => {
     props.onUserLogOut(false);
   };
@@ -33,7 +30,7 @@ const Header = (props) => {
         {props.isUserLoggedIn === true ? (
           <div className="content__user">
             <Link to="/" className="content__link">
-              Logged as: {username}
+              Logged as: {props.username}
             </Link>
             <button onClick={onUserLogOut}>Logout</button>
           </div>
@@ -45,6 +42,7 @@ const Header = (props) => {
         <Link to="/cart" className="basket__link">
           Cart
         </Link>
+        {props.orderItems !== 0 && <span className="link__dot"></span>}
         <p>{props.totalPrice}zł</p>
       </div>
     </div>

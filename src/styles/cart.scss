@@ -1,6 +1,5 @@
 .cart__container {
-  margin: 0;
-  padding: 40px;
+  padding: 6%;
   background: linear-gradient(#9b0707, #8a0606);
   height: 77vh;
 }
@@ -25,9 +24,9 @@
     width: 100%;
 
     h2 {
-    color: grey;
+      color: grey;
+    }
   }
-}
 
   .content__orders {
     display: flex;

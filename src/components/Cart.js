@@ -3,9 +3,7 @@ import { useEffect } from "react";
 import "../styles/cart.scss";
 
 const Cart = (props) => {
-  const cartItems = props.productItems;
-
-  let totalPrice = cartItems.reduce((prevItem, currentItem) => {
+  let totalPrice = props.orderItems.reduce((prevItem, currentItem) => {
     return prevItem + currentItem.price;
   }, 0);
 
@@ -21,12 +19,12 @@ const Cart = (props) => {
     <div className="cart__container">
       <div className="container__content">
         <h1>My order</h1>
-        {cartItems.length === 0 && (
+        {props.orderItems.length === 0 && (
           <div className="content__empty">
             <h2>Your cart is empty</h2>
           </div>
         )}
-        {cartItems.map((item) => {
+        {props.orderItems.map((item) => {
           return (
             <div key={item.id} className="content__orders">
               <div className="orders__item">

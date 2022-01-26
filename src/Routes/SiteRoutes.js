@@ -9,12 +9,12 @@ import Checkout from "../components/Checkout";
 import About from "../components/About";
 
 const SiteRoutes = (props) => {
-  const [orderItems, setOrderItems] = useState([]);
+  const [orderItems, setOrderItems] = useState(props.orderItems);
   const [totalPrice, setTotalPrice] = useState(0);
   const [username, setUsername] = useState();
 
   const onAddOrder = (order) => {
-    setOrderItems([...orderItems, order]);
+    props.onAddOrder(order);
   };
 
   return (
@@ -44,7 +44,7 @@ const SiteRoutes = (props) => {
           <Cart
             onAddOrder={onAddOrder}
             onPriceChange={props.onPriceChange}
-            productItems={orderItems}
+            orderItems={props.orderItems}
           />
         }
       />

@@ -10,19 +10,19 @@ const Menu = (props) => {
     <div className="menu">
       <div className="menu-main__container">
         <article>
-          <Card onAddOrder={props.onAddOrder} order={orders[0]} />
-          <Card onAddOrder={props.onAddOrder} order={orders[1]} />
-          <Card onAddOrder={props.onAddOrder} order={orders[2]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[0]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[1]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[2]} />
         </article>
         <article>
-          <Card onAddOrder={props.onAddOrder} order={orders[3]} />
-          <Card onAddOrder={props.onAddOrder} order={orders[4]} />
-          <Card onAddOrder={props.onAddOrder} order={orders[5]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[3]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[4]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[5]} />
         </article>
         <article>
-          <Card onAddOrder={props.onAddOrder} order={orders[6]} />
-          <Card onAddOrder={props.onAddOrder} order={orders[7]} />
-          <Card onAddOrder={props.onAddOrder} order={orders[8]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[6]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[7]} />
+          <Card onAddOrder={props.onAddOrder} order={props.orders[8]} />
         </article>
       </div>
     </div>
