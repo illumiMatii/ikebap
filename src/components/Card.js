@@ -1,14 +1,20 @@
 import "../styles/card.scss";
 import KebapImg from "../img/Kebab1.png";
 import { useState } from "react";
+import axios from "axios";
 
 const Card = (props) => {
   const [order, onAdd] = useState(props.order);
 
   const onAddOrderHandler = () => {
-    props.onAddOrder(order);
-    console.log(order);
+    let orderId = props.order.id;
+
+    axios.get(`http://localhost:8080/menu/${orderId}`);
+
+    props.onAddOrder(props.order);
   };
+
+  if (!props.order) return null;
 
   return (
     <div className="container__order">

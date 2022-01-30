@@ -1,7 +1,7 @@
 import "../styles/homemenu.scss";
 import Kebab from "../img/Kebab1.png";
 import HomeMenuItem from "./HomeMenuItem";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HomeMenu = (props) => {
   const [itemId, setItemId] = useState(0);
@@ -15,7 +15,6 @@ const HomeMenu = (props) => {
   };
 
   const onNextButton = () => {
-    console.log(itemId);
     if (itemId >= 8) {
       setItemId(8);
     } else {
